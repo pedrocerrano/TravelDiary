@@ -12,13 +12,12 @@ class EntryListTableViewController: UITableViewController {
     //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.reloadData()
     } //: DidLOAD
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         tableView.reloadData()
     } //: WillAPPEAR
 
@@ -53,8 +52,14 @@ class EntryListTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toDetailVC" {
+            if let index = tableView.indexPathForSelectedRow {
+                if let destVC = segue.destination as? EntryDetailVC {
+                    let entrySender = EntryController.sharedInstance.entries[index.row]
+                    destVC.entryReceiver = entrySender
+                } //: DESTINATION
+            } //: INDEX
+        } //: IDENTIFIER
     } //: SEGUE
 
 } //: CLASS
