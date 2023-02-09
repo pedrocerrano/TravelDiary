@@ -14,7 +14,15 @@ class EntryListTableViewController: UITableViewController {
         super.viewDidLoad()
 
     } //: DidLOAD
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    } //: WillAPPEAR
 
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

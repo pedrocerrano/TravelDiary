@@ -25,18 +25,12 @@ class EntryDetailVC: UIViewController {
     
     //MARK: - ACTIONS
     @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let title = entryTitleTextField.text,
+              let address = entryAddressTextField.text,
+              let body = entryBodyTextView.text else { return }
         
+        EntryController.sharedInstance.createEntry(title: title, address: address, body: body)
+        navigationController?.popViewController(animated: true)
     } //: SAVE BUTTON
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 } //: CLASS
