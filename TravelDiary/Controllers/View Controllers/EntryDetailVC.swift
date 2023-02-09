@@ -9,13 +9,26 @@ import UIKit
 
 class EntryDetailVC: UIViewController {
 
+    //MARK: - OUTLETS
+    
+    @IBOutlet weak var entryDateLabel: UILabel!
+    @IBOutlet weak var entryTitleTextField: UITextField!
+    @IBOutlet weak var entryAddressTextField: UITextField!
+    @IBOutlet weak var entryBodyTextView: UITextView!
+    
+    //MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+    } //: DidLOAD
     
-
+    
+    //MARK: - ACTIONS
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+    } //: SAVE BUTTON
+    
+    
     /*
     // MARK: - Navigation
 
@@ -26,4 +39,4 @@ class EntryDetailVC: UIViewController {
     }
     */
 
-}
+} //: CLASS
