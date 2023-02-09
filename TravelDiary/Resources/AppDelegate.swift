@@ -13,7 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //MARK: - MOCK DATA
+        EntryController.sharedInstance.createEntry(title: "Miami", address: "The Beach", body: "What an amazing time!")
+        
         return true
     }
 
