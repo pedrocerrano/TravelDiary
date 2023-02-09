@@ -8,10 +8,10 @@
 import Foundation
 
 class Entry {
-    let title: String
-    let address: String
+    var title: String
+    var address: String
     let entryDate: Date
-    let body: String
+    var body: String
     
     init(title: String, address: String, entryDate: Date = Date(), body: String) {
         self.title = title
@@ -21,3 +21,11 @@ class Entry {
     } //: MEMBER-WISE INITIALIZER
     
 } //: CLASS
+
+
+extension Entry: Equatable {
+    static func == (lhs: Entry, rhs: Entry) -> Bool {
+        return lhs.entryDate == rhs.entryDate
+    } //: EQUALtoSELF
+    
+} //: EXTENSION
